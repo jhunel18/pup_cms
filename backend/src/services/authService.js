@@ -22,7 +22,9 @@ const registerUser = async(name, email, password) =>{
 }
 
 const loginUser = async(email, password)=>{
+    
     const user = await userModel.getUserByEmail(email)
+
     if (!user) {
         throw new Error("Incorrect Email or Password");
     }
