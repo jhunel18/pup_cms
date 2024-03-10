@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
-import {axios} from axios;
+import { login } from '../services/LoginService';
 
 const LoginComponent = ({onSubmit}) => {
     const [username, setUsername] = useState('');
@@ -18,18 +18,12 @@ const LoginComponent = ({onSubmit}) => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        // Implement login logic here, e.g., API call
-        // Validate credentials (consider using a library)
-
         try {
-            const response = await axios.post('/login', {
-              username,
-              password,
-            });
-        
+            const data = await login({ username, password });
             // Handle successful login based on your server's response
-            console.log('Login successful:', response.data);
-            onSubmit(response.data); // Pass response data to App.js (optional)
+            console.log('Login successful:', data);
+            onSubmit(data); // Pass response data to App.js (optional)
+            setErrorMessage(null); // Clear error message on success
         
           } catch (error) {
             console.error('Login error:', error);
