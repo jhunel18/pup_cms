@@ -1,22 +1,16 @@
 import './App.css'
 import LoginComponent from './components/LoginComponent'
-import RootLayout from './shared/components/Layouts/RootLayout'
+import DashboardPage from './pages/DashboardPage';
+import LoginPage from './pages/LoginPage';
+import {Routes, Route} from 'react-router-dom'
 
 function App() {
-  const handleLogin = (credentials) => {
-    // Handle successful login, e.g., redirect to another page
-    // Store authentication state (consider using Redux or local storage)
-    console.log('Login successful:', credentials);
-};
+ 
   return (
-    <RootLayout>
-      <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <div className="max-w-md w-full space-y-8">
-                <h1>Login</h1>
-                <LoginComponent onSubmit={handleLogin} />
-            </div>  
-        </div>
-    </RootLayout>
+      <Routes>
+        <Route path='/' element={<LoginPage/>}/>
+        <Route path='/dashboard' element={<DashboardPage/>}/>
+      </Routes>
   )
 }
 
