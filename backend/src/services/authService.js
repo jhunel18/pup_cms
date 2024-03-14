@@ -22,7 +22,7 @@ const registerUser = async(name, email, password) =>{
 }
 
 const loginUser = async(email, password)=>{
-    
+    console.log(email, password)
     const user = await userModel.getUserByEmail(email)
 
     if (!user) {
