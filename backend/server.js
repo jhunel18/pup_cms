@@ -1,8 +1,8 @@
 require("dotenv").config();
 const express = require("express");
 
-const authRoutes= require("./src/routes/jwtAuth")
-const dashboardRoutes = require('./src/routes/dashboard')
+const authRoutes= require("./src/routes/authRoutes")
+const dashboardRoutes = require('./src/routes/dashboardRoutes')
 
 const cors = require("cors")
 const morgan = require("morgan")
