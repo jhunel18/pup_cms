@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { login } from '../services/LoginService';
+import { login } from '../services/AuthenticationService';
 import toast, { Toaster } from 'react-hot-toast';
 
 const LoginComponent = ({ onSubmit }) => {
