@@ -1,7 +1,3 @@
-// const pool = require("../../db")
-// const authQuery = require("../queries/authQuery")
-// const brcypt = require("bcrypt")
-// const jwtGenerator = require('../utils/jwtGenerator')
 const authService = require('../services/authService')
 
 const registerUser = async (req, res) =>{
@@ -26,7 +22,11 @@ const loginUser = async(req, res) =>{
         res.json(response);
     }
     catch(error){
-        res.status(500).json({error:error.message});
+        if (error.message === 'User not found' || error.message === 'Incorrect password') {
+            res.status(400).json({ error: error.message });
+        } else {
+            res.status(500).json({ error: 'Login failed' });
+        }
     }
 }
 

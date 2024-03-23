@@ -5,8 +5,6 @@ import LoginComponent from '../components/LoginComponent';
 
 const LoginPage = () => {
   const handleLogin = (credentials) => {
-    // Handle successful login, e.g., redirect to another page
-    // Store authentication state (consider using Redux or local storage)
     console.log('Login successful:', credentials);
 };
   return (

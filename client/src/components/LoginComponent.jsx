@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { login } from '../services/AuthenticationService';
+import { AuthenticationService } from '../services/AuthenticationService';
 import toast, { Toaster } from 'react-hot-toast';
 
 const LoginComponent = ({ onSubmit }) => {
@@ -19,7 +19,7 @@ const LoginComponent = ({ onSubmit }) => {
     event.preventDefault();
 
     try {
-      const data = await login({ email, password });
+      const data = await AuthenticationService.login({ email, password });
       // Handle successful login based on your server's response
       console.log('Login successful:', data);
       onSubmit(data); // Pass response data to App.js (optional)
