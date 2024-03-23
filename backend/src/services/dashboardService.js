@@ -1,8 +1,14 @@
-const dashboardModel = require('../model/dashboardModel')
+const User = require('../model/User');
 
 const getAllUsers = async()=>{
-    const users = await dashboardModel.getAllUsers()
-    return users
+    try {
+        const users = await User.findAll();
+        return users;
+      } catch (error) {
+        // Handle error
+        console.error('Error fetching users:', error);
+        throw error;
+      }
 }
 
 module.exports ={
