@@ -2,10 +2,12 @@ import React from 'react';
 import { useState } from 'react';
 import { AuthenticationService } from '../services/AuthenticationService';
 import toast, { Toaster } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const LoginComponent = ({ onSubmit }) => {
   const [email, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleUsernameChange = (event) => {
     setUsername(event.target.value);
@@ -24,6 +26,7 @@ const LoginComponent = ({ onSubmit }) => {
       console.log('Login successful:', data);
       onSubmit(data); // Pass response data to App.js (optional)
       toast.success('Login successful'); // Display success toast
+      navigate('/dashboard')
     } catch (error) {
       console.error('Login error:', error);
       toast.error('Login failed. Please check your credentials.'); // Display error toast
