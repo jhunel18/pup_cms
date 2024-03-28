@@ -25,7 +25,7 @@ const LoginComponent = ({onSubmit}) => {
       console.log('Login successful');
       onSubmit(data); // Pass response data to App.js (optional)
       toast.success('Login successful'); // Display success toast
-      navigate('/dashboard')
+      setTimeout(() => navigate('/dashboard'), 1000);
     } catch (error) {
       console.error('Login error:', error);
       toast.error('Login failed. Please check your credentials.'); // Display error toast
