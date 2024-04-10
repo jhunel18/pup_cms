@@ -3,7 +3,7 @@ import React from 'react'
 const Header = () => {
   return (
     <>
-    <h1>Header</h1>
+    <p className="text-2xl font-semibold px-5"> Clinic Inventory Management System</p>
     </>
   )
 }

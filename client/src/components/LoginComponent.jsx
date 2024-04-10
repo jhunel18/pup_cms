@@ -75,7 +75,7 @@ const LoginComponent = ({onSubmit}) => {
       </div>
       <div className="mt-8">
         <button 
-        className="active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out w-full rounded-md py-3 bg-violet-500 text-white text-lg font-bold"
+        className="active:scale-[.98] active:duration-75 transition-all hover:scale-[1.01] ease-in-out w-full rounded-md py-3 bg-blue-500 text-white text-lg font-bold"
         onClick={handleSubmit}>
           Sign In
         </button>
